@@ -4,7 +4,8 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "swoole",
+        "hyperf",
         "udp-server"
     ],
     "description": "",
