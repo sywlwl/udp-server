@@ -23,16 +23,12 @@ use Sywlwl\BinTool\BIN;
 
 class Server
 {
-    private LoggerInterface $logger;
-
-    private int $count = 0;
 
     private AbstractDispatcher $dispatcher;
 
 
-    public function __construct(ContainerInterface $container, private ConfigInterface $config)
+    public function __construct(private ConfigInterface $config)
     {
-        $this->logger = $container->get(LoggerFactory::class)->get('udp-server');
         $config = $this->config->get('udp_server');
         $this->dispatcher = $container->get($config['dispatcher']);
     }
