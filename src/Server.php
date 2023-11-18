@@ -23,11 +23,10 @@ use Sywlwl\BinTool\BIN;
 
 class Server
 {
-
     private AbstractDispatcher $dispatcher;
 
 
-    public function __construct(private ConfigInterface $config)
+    public function __construct(ContainerInterface $container, private ConfigInterface $config)
     {
         $config = $this->config->get('udp_server');
         $this->dispatcher = $container->get($config['dispatcher']);
